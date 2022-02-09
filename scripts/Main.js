@@ -8,8 +8,8 @@ const keys = [];
 const player = {
     x: 100, // x axis
     y: 380, // y axis
-    width: 500,
-    height:463,
+    width: 548, // 5204 * 10
+    height:548,
     frameX: 0, // will store coordinates rectangle of frame of the image, spritesheet is compose of images
     frameY: 0,
     speed: 9, // how many pixel per frame.
@@ -19,7 +19,7 @@ const player = {
 };
 
 const playerSprite = new Image();
-playerSprite.src = "images/spritesheet.png"
+playerSprite.src = "images/spritesheet2.png"
 
 let position = 0;
 const background = new Image();
@@ -58,17 +58,17 @@ function movePlayer(){
     if (keys[38] && player.y > 100){
 
         player.y -= player.speed;
-        player.frameY = 3;
+        player.frameY = 1;
         player.moving = true;
         // player.height = 488.3;
         // player.width = 410;
     }
-
+/*
 
     if (keys[37] && player.x  > 0){
 
         player.x -= player.speed;
-        player.frameX = 9;
+        player.frameX = 2;
         player.moving = true;
         // player.height = 490;
         // player.width = 348;
@@ -80,12 +80,12 @@ function movePlayer(){
         player.frameY = 0;
         player.moving = true;
         
-    }
+    }*/
 
     if (keys[39]  && player.x < canvas.width){
 
         player.x += player.speed;
-        player.frameX = 7;
+        player.frameX = 2;
         player.moving = true;
         
     }
@@ -133,4 +133,4 @@ function animate(){
     }
 }
 
-startAnimating(30);
+startAnimating(10);
