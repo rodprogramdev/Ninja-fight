@@ -35,7 +35,7 @@ function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH){
 function animate(){
     canvasContext.clearRect(0,0,canvas.width, canvas.height);
     canvasContext.drawImage(background,0,0, canvas.width, canvas.height); // built in canvas method three versions.
-    drawSprite(playerSprite, 0, 0, player.width, player.height, 0,0, player.width - 200,player.height-200);
+    drawSprite(playerSprite, 0, 0, player.width, player.height, 0,0, player.width /6,player.height/6);
     requestAnimationFrame(animate);
 }
 
