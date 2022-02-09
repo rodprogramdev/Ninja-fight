@@ -19,15 +19,27 @@ const player = {
 };
 
 const playerSprite = new Image();
-playerSprite.src = "spritesheet.png"
+playerSprite.src = "images/spritesheet.png"
 
-
+let position = 0;
 const background = new Image();
 background.src = "images/BG.png";
 
+
+function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH){
+    canvasContext.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH);
+
+}
+
+
 function animate(){
-    canvasContext.drawImage(background, 0,0, canvas.width, canvas.height); // built in canvas method three versions.
+    canvasContext.clearRect(0,0,canvas.width, canvas.height);
+    canvasContext.drawImage(background,0,0, canvas.width, canvas.height); // built in canvas method three versions.
+    drawSprite(playerSprite, 0, 0, player.width, player.height, 0,0, player.width - 200,player.height-200);
     requestAnimationFrame(animate);
 }
 
 animate();
+
+
+
